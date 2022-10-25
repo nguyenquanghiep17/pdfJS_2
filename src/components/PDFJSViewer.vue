@@ -29,7 +29,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
             }
             var self = this;
             let objReq = {};
-            objReq.url = "https://amisapp.misa.vn/wesign/api/file-management/api/General/file-pdf/stream?bucketName=wesign-production&objectId=39c0fd2c-e973-4f65-b0a3-73dd427c41f7&fileName=Template-Labor-Contract-2022.docx";
+            objReq.url = "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf";
             objReq.withCredentials= false;
 
             var loadingTask = pdfjsLib.getDocument(objReq);
