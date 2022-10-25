@@ -42,8 +42,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         var page = await self.pdf.getPage(i);
                         var viewport = page.getViewport({ scale: self.defaultConvertRatio });
                         var canvas = document.getElementById(i + "");
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
+                        canvas.height = 1359;
+                        canvas.width = 1050;
                         canvas.style.width = viewport.width + "px";
                         canvas.style.height = viewport.height + "px";
 
