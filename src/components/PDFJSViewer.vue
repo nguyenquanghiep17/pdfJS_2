@@ -1,9 +1,9 @@
 <template>
     <div>
-        <canvas id="1"></canvas>
-        <canvas id="2"></canvas>
-        <canvas id="3"></canvas>
-        <canvas id="4"></canvas>
+        <canvas id="1" ></canvas>
+        <canvas id="2" ></canvas>
+        <canvas id="3" ></canvas>
+        <canvas id="4" ></canvas>
     </div>
 </template>
     
@@ -44,6 +44,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         var canvas = document.getElementById(i + "");
                         canvas.height = viewport.height;
                         canvas.width = viewport.width;
+                        canvas.style.width = viewport.width + "px";
+                        canvas.style.height = viewport.height + "px";
 
                         page
                             .render({
