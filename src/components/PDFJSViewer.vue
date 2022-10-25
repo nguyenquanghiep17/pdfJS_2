@@ -8,8 +8,8 @@
 </template>
     
 <script>
-import * as pdfjsLib from "../../public/pdfjs-dist/legacy/build/pdf.js";
-import "../../public/pdfjs-dist/legacy/web/pdf_viewer.css";
+import * as pdfjsLib from "../../public/pdfjs-dist/build/pdf.js";
+import "../../public/pdfjs-dist/web/pdf_viewer.css";
 import pdfjsWorker from "../../public/pdfjs-dist/build/pdf.worker.entry.js";
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
     export default {
