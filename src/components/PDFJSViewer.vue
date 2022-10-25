@@ -1,9 +1,18 @@
 <template>
     <div>
-        <canvas id="1" ></canvas>
-        <canvas id="2" ></canvas>
-        <canvas id="3" ></canvas>
-        <canvas id="4" ></canvas>
+        <div class="wrap-canvas">
+            <canvas id="1" ></canvas>
+        </div>
+        <div class="wrap-canvas">
+            <canvas id="2" ></canvas>
+        </div>
+        <div class="wrap-canvas">
+            <canvas id="3" ></canvas>
+        </div>
+        <div class="wrap-canvas">
+            <canvas id="4" ></canvas>
+        </div>
+        
     </div>
 </template>
     
@@ -83,4 +92,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
     }
 </script>
 <style scoped>
+    .wrap-canvas {
+        width: 394px;
+        height: 511px;
+    }
 </style>
