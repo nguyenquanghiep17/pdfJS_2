@@ -17,9 +17,9 @@
 </template>
     
 <script>
-import * as pdfjsLib from "../../public/pdfjs-dist/build/pdf.js";
-import "../../public/pdfjs-dist/web/pdf_viewer.css";
-import pdfjsWorker from "../../public/pdfjs-dist/build/pdf.worker.entry.js";
+import * as pdfjsLib from "../../public/lib/build/pdf.js";
+// import "../../public/lib/web/pdf_viewer.css";
+import pdfjsWorker from "../../public/lib/build/pdf.worker.js";
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
     export default {
         name: 'PDFJSViewer',
@@ -51,10 +51,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         var page = await self.pdf.getPage(i);
                         var viewport = page.getViewport({ scale: self.defaultConvertRatio });
                         var canvas = document.getElementById(i + "");
-                        canvas.height = 1359;
-                        canvas.width = 1050;
-                        canvas.style.width = viewport.width + "px";
-                        canvas.style.height = viewport.height + "px";
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
 
                         page
                             .render({
@@ -92,8 +90,4 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
     }
 </script>
 <style scoped>
-    .wrap-canvas {
-        width: 394px;
-        height: 511px;
-    }
 </style>
