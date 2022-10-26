@@ -33,7 +33,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
             }
         },
         created() {
-            debugger
             if (window.outerWidth < this.defaultWidth) {
                 this.defaultWidth = window.outerWidth - 6;
             }
@@ -52,8 +51,11 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         var page = await self.pdf.getPage(i);
                         var viewport = page.getViewport({ scale: self.defaultConvertRatio });
                         var canvas = document.getElementById(i + "");
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
+                        canvas.style.width = viewport.width
+                        canvas.style.height = viewport.height
+
+                        canvas.width = viewport.width * self.defaultConvertRatio;
+                        canvas.height = viewport.height * self.defaultConvertRatio;
 
                         page
                             .render({
