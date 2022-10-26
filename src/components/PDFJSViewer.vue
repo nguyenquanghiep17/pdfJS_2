@@ -17,9 +17,9 @@
 </template>
     
 <script>
-import * as pdfjsLib from "../../public/lib/build/pdf.js";
-// import "../../public/lib/web/pdf_viewer.css";
-import pdfjsWorker from "../../public/lib/build/pdf.worker.js";
+import * as pdfjsLib from "../../public/pdfjs-dist/build/pdf.js";
+import "../../public/pdfjs-dist/web/pdf_viewer.css";
+import pdfjsWorker from "../../public/pdfjs-dist/build/pdf.worker.entry.js";
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
     export default {
         name: 'PDFJSViewer',
@@ -33,6 +33,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
             }
         },
         created() {
+            debugger
             if (window.outerWidth < this.defaultWidth) {
                 this.defaultWidth = window.outerWidth - 6;
             }
