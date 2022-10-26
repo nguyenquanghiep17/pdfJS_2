@@ -47,6 +47,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                 .then(async (pdf) => {
                     self.pdf = pdf;
                     self.defaultConvertRatio = self.defaultWidth / self.width;
+                    self.defaultConvertRatio = 1;
                     for (let i = 1; i < 5; i++) {
                         var page = await self.pdf.getPage(i);
                         var viewport = page.getViewport({ scale: self.defaultConvertRatio });
