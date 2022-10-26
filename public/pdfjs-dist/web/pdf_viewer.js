@@ -5002,7 +5002,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   },
   printResolution: {
-    value: 150,
+    value: 300,
     kind: OptionKind.VIEWER
   },
   sidebarViewOnLoad: {
