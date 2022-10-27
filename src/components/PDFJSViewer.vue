@@ -87,6 +87,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         canvas.style.width = self.roundToDivide(viewport.width, sfx[1]) + "px";
                         canvas.style.height = self.roundToDivide(viewport.height, sfy[1]) + "px";
 
+                        var weakMap = new WeakMap();
+                        weakMap.set(canvas, viewport);
                         const transform = outputScale.scaled
                         ? [outputScale.sx, 0, 0, outputScale.sy, 0, 0]
                         : null;
