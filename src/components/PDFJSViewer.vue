@@ -94,9 +94,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                             .render({
                                 canvasContext: canvas.getContext("2d", { alpha: false }),
                                 transform: transform,
-                                viewport: viewport,
-                                annotationMode: 2,
-                                pageColors: null
+                                viewport: viewport
                             })
                             .promise.then(() => {
 
