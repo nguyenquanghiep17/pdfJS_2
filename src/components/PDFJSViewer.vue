@@ -1,16 +1,16 @@
 <template>
     <div>
         <div class="wrap-canvas">
-            <canvas id="1" ></canvas>
+            <canvas id="1" role="presentation"></canvas>
         </div>
         <div class="wrap-canvas">
-            <canvas id="2" ></canvas>
+            <canvas id="2" role="presentation"></canvas>
         </div>
         <div class="wrap-canvas">
-            <canvas id="3" ></canvas>
+            <canvas id="3" role="presentation"></canvas>
         </div>
         <div class="wrap-canvas">
-            <canvas id="4" ></canvas>
+            <canvas id="4" role="presentation"></canvas>
         </div>
         
     </div>
