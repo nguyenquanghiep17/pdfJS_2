@@ -56,12 +56,14 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         canvas.width = viewport.width;
                         canvas.height = viewport.height;
 
+
                         page
                             .render({
                                 canvasContext: canvas.getContext("2d", { alpha: false }),
+                                transform: null,
                                 viewport: viewport,
-                                intent: 'print',
-                                annotationMode: 2
+                                annotationMode: 2,
+                                pageColors: null
                             })
                             .promise.then(() => {
 
