@@ -58,7 +58,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
                         page
                             .render({
-                                canvasContext: canvas.getContext("2d"),
+                                canvasContext: canvas.getContext("2d", { alpha: false }),
                                 viewport: viewport,
                                 intent: 'print',
                             })
