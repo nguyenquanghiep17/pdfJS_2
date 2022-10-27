@@ -70,8 +70,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
                         var canvas = document.getElementById(i + "");
                         const outputScale = {
-                            sx: 1,
-                            sy: 1
+                            sx: 3,
+                            sy: 3
                         }
                         const sfx = self.approximateFraction(outputScale.sx);
                         const sfy = self.approximateFraction(outputScale.sy);
