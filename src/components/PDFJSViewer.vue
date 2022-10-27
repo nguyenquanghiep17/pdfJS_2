@@ -75,10 +75,12 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         }
                         const sfx = self.approximateFraction(outputScale.sx);
                         const sfy = self.approximateFraction(outputScale.sy);
-                        console.log(outputScale);
+                        
 
-                        canvas.width = self.roundToDivide(viewport.width * outputScale.sx, sfx[0]);
-                        canvas.height = self.roundToDivide(viewport.height * outputScale.sy, sfy[0]);
+                        // canvas.width = self.roundToDivide(viewport.width * outputScale.sx, sfx[0]);
+                        // canvas.height = self.roundToDivide(viewport.height * outputScale.sy, sfy[0]);
+                        canvas.width = 1050;
+                        canvas.height = 1359;
                         canvas.style.width = self.roundToDivide(viewport.width, sfx[1]) + "px";
                         canvas.style.height = self.roundToDivide(viewport.height, sfy[1]) + "px";
 
