@@ -75,6 +75,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         }
                         const sfx = self.approximateFraction(outputScale.sx);
                         const sfy = self.approximateFraction(outputScale.sy);
+                        console.log(outputScale);
 
                         canvas.width = self.roundToDivide(viewport.width * outputScale.sx, sfx[0]);
                         canvas.height = self.roundToDivide(viewport.height * outputScale.sy, sfy[0]);
