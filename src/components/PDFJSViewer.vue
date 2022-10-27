@@ -1,26 +1,26 @@
 <template>
     <div>
-        <div class="wrap" role="region" id="wrap-1">
-            <div class="wrap-canvas" id="wrap-canvas-1">
-                <canvas id="1" role="presentation"></canvas>
-            </div>
-        </div>
-        <div class="wrap" role="region" id="wrap-2">
-            <div class="wrap-canvas" id="wrap-canvas-2">
-                <canvas id="2" role="presentation"></canvas>
-            </div>
-        </div>
-        <div class="wrap" role="region" id="wrap-3">
-            <div class="wrap-canvas" id="wrap-canvas-3">
-                <canvas id="3" role="presentation"></canvas>
-            </div>
-        </div>
+        <!-- <div class="wrap" role="region" id="wrap-1">
+            <div class="wrap-canvas" id="wrap-canvas-1"> -->
+                <canvas id="1" ></canvas>
+            <!-- </div>
+        </div> -->
+        <!-- <div class="wrap" role="region" id="wrap-2">
+            <div class="wrap-canvas" id="wrap-canvas-2"> -->
+                <canvas id="2" ></canvas>
+            <!-- </div>
+        </div> -->
+        <!-- <div class="wrap" role="region" id="wrap-3">
+            <div class="wrap-canvas" id="wrap-canvas-3"> -->
+                <canvas id="3" ></canvas>
+            <!-- </div> -->
+        <!-- </div> -->
 
-        <div class="wrap" role="region" id="wrap-4">
-            <div class="wrap-canvas" id="wrap-canvas-4">
-                <canvas id="4" role="presentation"></canvas>
-            </div>
-        </div>
+        <!-- <div class="wrap" role="region" id="wrap-4">
+            <div class="wrap-canvas" id="wrap-canvas-4"> -->
+                <canvas id="4" ></canvas>
+            <!-- </div>
+        </div> -->
 
         
     </div>
