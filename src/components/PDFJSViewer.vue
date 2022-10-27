@@ -71,24 +71,29 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         var canvas = document.getElementById(i + "");
                         const outputScale = {
                             sx: 3,
-                            sy: 3
+                            sy: 3,
+                            scaled: true
                         }
                         const sfx = self.approximateFraction(outputScale.sx);
                         const sfy = self.approximateFraction(outputScale.sy);
                         
 
-                        // canvas.width = self.roundToDivide(viewport.width * outputScale.sx, sfx[0]);
-                        // canvas.height = self.roundToDivide(viewport.height * outputScale.sy, sfy[0]);
-                        canvas.width = 1050;
-                        canvas.height = 1359;
+                        canvas.width = self.roundToDivide(viewport.width * outputScale.sx, sfx[0]);
+                        canvas.height = self.roundToDivide(viewport.height * outputScale.sy, sfy[0]);
+                        // canvas.width = 1050;
+                        // canvas.height = 1359;
                         canvas.style.width = self.roundToDivide(viewport.width, sfx[1]) + "px";
                         canvas.style.height = self.roundToDivide(viewport.height, sfy[1]) + "px";
 
-
+                        var weakMap = new WeakMap();
+                        weakMap.set(canvas, viewport);
+                        const transform = outputScale.scaled
+                        ? [outputScale.sx, 0, 0, outputScale.sy, 0, 0]
+                        : null;
                         page
                             .render({
                                 canvasContext: canvas.getContext("2d", { alpha: false }),
-                                transform: null,
+                                transform: transform,
                                 viewport: viewport,
                                 annotationMode: 2,
                                 pageColors: null
