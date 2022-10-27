@@ -38,7 +38,7 @@ var _is_node = require("../shared/is_node.js");
 
 const MIN_FONT_SIZE = 16;
 const MAX_FONT_SIZE = 100;
-const MAX_GROUP_SIZE = 4096;
+const MAX_GROUP_SIZE = 4096 * 5;
 const EXECUTION_TIME = 15;
 const EXECUTION_STEPS = 10;
 const MAX_SIZE_TO_COMPILE = _is_node.isNodeJS && typeof Path2D === "undefined" ? -1 : 1000;
