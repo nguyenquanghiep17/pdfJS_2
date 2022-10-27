@@ -61,6 +61,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                                 canvasContext: canvas.getContext("2d", { alpha: false }),
                                 viewport: viewport,
                                 intent: 'print',
+                                annotationMode: 2
                             })
                             .promise.then(() => {
 
