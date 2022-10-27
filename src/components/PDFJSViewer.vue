@@ -69,10 +69,12 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         wrapCanvas.style.height = Math.floor(viewport.height) + "px";
 
                         var canvas = document.getElementById(i + "");
+                        let sx = window.devicePixelRatio || 1;
+                        let sy = window.devicePixelRatio || 1;
                         const outputScale = {
-                            sx: 3,
-                            sy: 3,
-                            scaled: true
+                            sx: sx,
+                            sy: sy,
+                            scaled: sx !== 1 || sy !== 1
                         }
                         const sfx = self.approximateFraction(outputScale.sx);
                         const sfy = self.approximateFraction(outputScale.sy);
