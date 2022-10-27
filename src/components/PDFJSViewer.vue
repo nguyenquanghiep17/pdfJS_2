@@ -69,9 +69,17 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                         wrapCanvas.style.height = Math.floor(viewport.height) + "px";
 
                         var canvas = document.getElementById(i + "");
+                        const outputScale = {
+                            sx: 1,
+                            sy: 1
+                        }
+                        const sfx = self.approximateFraction(outputScale.sx);
+                        const sfy = self.approximateFraction(outputScale.sy);
 
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
+                        canvas.width = self.roundToDivide(viewport.width * outputScale.sx, sfx[0]);
+                        canvas.height = self.roundToDivide(viewport.height * outputScale.sy, sfy[0]);
+                        canvas.style.width = self.roundToDivide(viewport.width, sfx[1]) + "px";
+                        canvas.style.height = self.roundToDivide(viewport.height, sfy[1]) + "px";
 
 
                         page
@@ -108,6 +116,56 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
                 .catch((response) => {
                     console.error("Loi ROI " + response);
                 });
+        },
+        methods: {
+            approximateFraction(x) {
+                // Fast paths for int numbers or their inversions.
+                if (Math.floor(x) === x) {
+                    return [x, 1];
+                }
+                const xinv = 1 / x;
+                const limit = 8;
+                if (xinv > limit) {
+                    return [1, limit];
+                } else if (Math.floor(xinv) === xinv) {
+                    return [1, xinv];
+                }
+
+                const x_ = x > 1 ? xinv : x;
+                // a/b and c/d are neighbours in Farey sequence.
+                let a = 0,
+                    b = 1,
+                    c = 1,
+                    d = 1;
+                // Limiting search to order 8.
+                while (true) {
+                    // Generating next term in sequence (order of q).
+                    const p = a + c,
+                    q = b + d;
+                    if (q > limit) {
+                    break;
+                    }
+                    if (x_ <= p / q) {
+                    c = p;
+                    d = q;
+                    } else {
+                    a = p;
+                    b = q;
+                    }
+                }
+                let result;
+                // Select closest of the neighbours to x.
+                if (x_ - a / b < c / d - x_) {
+                    result = x_ === x ? [a, b] : [b, a];
+                } else {
+                    result = x_ === x ? [c, d] : [d, c];
+                }
+                return result;
+            },
+            roundToDivide(x, div) {
+                const r = x % div;
+                return r === 0 ? x : Math.round(x - r + div);
+            }
         }
     }
 </script>
